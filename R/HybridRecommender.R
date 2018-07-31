@@ -82,3 +82,27 @@ recommenderRegistry$set_entry(
 #   description="Hybrid Recommender")
 
 # ******************************************************************************
+
+# Working exmaple -----------------------------------------------------------------------------
+
+# Please uncomment it for usage                                  
+# You need to load the required library(s) and prepare the data (train) before the below usage
+                                      
+# Approach 1: POPULAR --------------------
+#model.popular <- Recommender(data= train, method= "POPULAR", param= NULL)
+
+# Approach 2: RANDOM --------------------
+#model.random <- Recommender(data= train, method= "RANDOM", param= list(range= c(1, 5)))
+
+# Approach 3: IBCF --------------------
+#model.IBCF <- Recommender(data= train, method= "IBCF", param= list(
+#  k= 20, method= "Cosine", normalize= "center"))
+
+# evaluate on  method HYBRID, with custom recommenders as input
+#evaluate(scheme, method="HYBRID", type= "topNList",
+#              n= c(1, 3, 5, 10, 15, 20), param=list("popular" = model.popular, 
+#                                                    "random" = model.random, 
+#                                                    "IBCF" = model.IBCF, 
+#                                                    weights= c(.3, .1, .6)))
+                                      
+# End -----------------------------------------------------------------------------
